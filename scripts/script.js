@@ -88,7 +88,7 @@ const viewGallery = document.querySelectorAll('.gaView');
 if (viewGallery) {
     viewGallery.forEach(viewGallery => {
         viewGallery.addEventListener('click', () => {
-                dynaContUrl = "http://127.0.0.1:8080/gallery.html"
+                dynaContUrl = "https://alabiohio.github.io/DestinyArt/gallery.html"
                 fetchDesArtHome();
                 servicesPart.style.display="none";
                 yCDABox.style.display="none";
