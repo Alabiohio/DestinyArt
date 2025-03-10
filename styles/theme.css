@@ -1,0 +1,64 @@
+body.light, .light header {
+  background: #fff;
+  color: #000;
+  transition: 0.5s ease
+}
+
+.light header {
+  box-shadow: 0px 0px 1px #000;
+}
+.light .Hmenu {
+  background: lightgray
+}
+.light .menu li {
+  background: lightgray;
+}
+.light .menu a{
+  color: #222;
+}
+.light .Hmenu .fa, .light .lgScrMenu .fa {
+  color: maroon
+}
+.light .hds {
+  color: darkslategrey
+}
+
+
+
+.light span.mNIc {
+  color: #000
+}
+
+/* SERVICES */
+.light .section-title {
+  color: darkslategray
+}
+.light .service-item p {
+  color: #444
+}
+
+
+/* GALLERY */
+ .light .gaH {
+  color: darkslategray
+}
+
+/* FOOTER */
+.light .contact-section a {
+  color: #000;
+}
+.light .ftHeads, .light .thTxt {
+  color: darkslategrey;
+}
+.light footer {
+  box-shadow: 0px 0px 1px #000;
+  background-color: rgba(1,225,1,0.1)
+}
+
+.light .fa-moon, .light .fa-sun {
+  color: maroon
+}
+
+
+
+

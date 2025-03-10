@@ -1,0 +1,410 @@
+@import url('https://fonts.googleapis.com/css2?family=Arapey:ital@0;1&family=Cormorant:ital,wght@0,300..700;1,300..700&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Goudy+Bookletter+1911&family=Ma+Shan+Zheng&family=Signika:wght@300;400;500;600;700&family=Pacifico&display=swap');
+html {
+  font-size: 16px
+}
+body {
+  background: #000;
+  color: #fff;
+  transition: 0.5s ease
+}
+
+header {
+  background-color: transparent;
+  position: fixed;
+  top: 0;
+  box-shadow: 0px 0px 5px #fff;
+  width: 100vw;
+  background: #222;
+  z-index: 1
+}
+
+.hdi b {
+  font-size: 2rem;
+  color: lightsteelblue;
+  font-family: "Goudy Bookletter 1911", serif;
+  font-weight: 800;
+  font-style: normal;
+}
+.hdi {
+  color: turquoise;
+  font-family: "Fraunces", serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  font-variation-settings:
+    "SOFT" 0,
+    "WONK" 0;
+}
+.light .hdi {
+  color: darkolivegreen
+}
+.light .hdi b {
+  color: maroon
+}
+.menu li a.act {
+  font-weight: 800;
+  color: darkkhaki;
+  text-decoration-color: underline
+}
+.light .menu li a.act {
+  color: maroon
+}
+/* FOR LARGE AND MEDIUM SCREENS */
+.lgScrMunuCont {
+  border: 1px solid;
+  height: 45px
+}
+.lgScrMenu {
+  display: flex;
+  flex-wrap: nowrap;
+  white-space: normal;
+  margin-top: 1.1%;
+}
+.lgScrMenu li a {
+  color: white;
+  font-size: 1.3rem;
+  font-weight: 600;
+  padding: 4%
+}
+.light .lgScrMenu li a  {
+  color: black
+}
+
+.learnM {
+  border-radius: 50px;
+  background: rgba(127,225,0,0.2);
+  border: 1px solid darkgreen;
+  font-size: 1.1rem;
+  font-family: "Goudy Bookletter 1911", serif;
+  font-weight: 800;
+  font-style: normal;
+}
+.learnM:hover {
+  background: rgba(127,225,0,0.3);
+  transition: transform 0.01s ease;
+  transform: scale(1.03)
+  }
+.learnM:active {
+  border-radius: 50px;
+  transition: transform 0.01s ease;
+  transform: scale(0.97)
+  }
+.light .learnM {
+  border-radius: 50px;
+  background: rgba(127,225,0,0.3);
+  border: 1px solid darkgreen;
+  color: #000
+}
+.light .learnM:hover {
+  background: rgba(0,225,0,0.3);
+  }
+
+
+
+span.mNIc {
+  font-size: 2.4rem;
+  color: white
+}
+#menuIc:hover {
+  transition: transform 0.5s ease;
+  transform: rotate(180deg)
+}
+#menuIci:hover {
+  transition: transform 0.5s ease;
+  transform: rotate(-180deg)
+}
+
+.Hmenu {
+  width: 100vw;
+  height: 40vh;
+  /*position: fixed;
+  left: 0;*/
+  background: #666;
+  animation: frmTop 0.3s ease;
+  transform-origin: top;
+  display: none
+}
+.show-menu {
+  display: block
+}
+.menuAc {
+  animation: frmTop 0.3s ease;
+  transform-origin: top
+}
+@keyframes frmTop {
+  from { transform: scaleY(0)}
+  to { transform: scaleY(50vh)}
+}
+.menuDisAc {
+  animation: frmBtm 0.3s ease;
+  transform-origin: bottom
+}
+@keyframes frmBtm {
+  from { transform: scaleY(50vh)}
+  to { transform: scaleY(0)}
+}
+
+
+.menu li {
+  background: #666;
+}
+.menu li a {
+  color: white;
+  font-size: 1.5rem;
+  font-family: "Goudy Bookletter 1911", serif;
+  font-weight: 600;
+  font-style: normal;
+}
+.menu li span {
+  margin-left: 5%;
+  margin-top: 5%;
+  font-size: 1.4rem
+}
+main {
+  margin-top: 25%
+}
+
+
+
+
+
+.Hmenu .fa {
+  color: darkkhaki
+}
+
+
+
+/* MAIN */
+
+.hds {
+  font-size: 1.8rem;
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: lightsteelblue;
+  font-family: "Goudy Bookletter 1911", serif;
+  font-weight: 800;
+  font-style: normal;
+}
+
+.animeImg {
+  animation: fromLeft 1s ease
+}
+
+@keyframes fromLeft {
+  from { transform: translateX(50px)}
+  to { transform: translateX(0)}
+}
+
+.draImgs {
+  
+}
+
+/* SERVICES */
+/* SERVICES */
+.home-services {
+    padding: 40px 20px;
+}
+
+.service-item {
+    padding: 15px;
+}
+
+.service-img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.home-services h3 {
+    font-size: 1.7rem;
+    margin-bottom: 5px;
+    font-family: "Fraunces", serif;
+    font-weight: 600
+}
+
+.service-item p {
+    color: lightgray;
+    font-family: 'signika' , sans-serif;
+    font-size: 1rem
+}
+
+/* ABOUT */
+.abtCont {
+  border-radius: 10px;
+  background: rgba(150, 225, 100, 0.3)
+}
+
+.values-section {
+    padding: 50px 20px;
+    background: rgba(55, 222, 203, 0.2);
+}
+.values-section h2 {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+    color: lightsteelblue;
+}
+.values-section .cell {
+    padding: 20px;
+    text-align: center;
+}
+.values-section .icon {
+    font-size: 40px;
+    color: maroon; /* Customize the color */
+    margin-bottom: 10px;
+}
+.values-section h4 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    font-family: "Arapey", serif;
+    font-weight: 800;
+    color: olive;
+}
+.values-section p {
+    font-size: 1.03rem;
+    color: azure;
+    font-family: 'signika' , sans-serif;
+    font-weight: 500;
+}
+.light .values-section p {
+    color: #444;
+}
+.hIv {
+  color: lightsteelblue;
+  font-weight: 800;
+  font-size: 2.8rem;
+}
+
+
+/* Gallery */
+
+.gaScrCont {
+  position: relative;
+  display: flex;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+}
+@keyframes scroll {
+  from {transform: translateX(0px)}
+  to {transform: translateX(-1500px)}
+}
+.gaImgScr {
+  animation: scroll 25s linear alternate infinite 1.5s;
+}
+.gaDraImgs {
+  border-radius: 8px;
+  }
+
+.gaPortrait .cell{
+  margin-top: 5%
+}
+
+.gaH {
+  margin-top: 10%;
+  font-size: 3rem;
+  color: lightcyan;
+  font-family: "Goudy Bookletter 1911", serif;
+  font-weight: 800;
+  font-style: normal;
+}
+
+.gaAcBut {
+  margin-top: 10%;
+}
+.gaAcBut button {
+  background-color: olivedrab;
+  border-radius: 50px;
+  font-weight: 800;
+  font-size: 1rem;
+  animation: bounce 1s ease-out alternate infinite;
+  font-family: 'signika' , sans-serif;
+}
+@keyframes bounce {
+  to {transform: scale(1.1)}
+}
+.gaAcBut button:hover {
+  transition: transform 0.1s ease;
+  transform: scale(1.1)
+}
+.gaAcBut button:active {
+  transition: transform 0.1s ease;
+  transform: scale(0.9)
+}
+
+
+
+footer {
+  box-shadow: 0px 0px 1px #fff;
+  background: rgba(0,55,30,0.5);
+}
+
+.contact-section a {
+  color: olivedrab;
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+.contactHead {
+  margin-top: 15%;
+  font-size: 2rem;
+  font-weight: 800;
+  font-family: "Fraunces", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings:
+    "SOFT" 0,
+    "WONK" 0;
+}
+
+.ftHeads {
+  color: lightsteelblue;
+  font-size: 1.5rem;
+  font-weight: 800;
+  font-family: "Fraunces", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings:
+    "SOFT" 0,
+    "WONK" 0;
+}
+.ftMsg {
+  margin-left: 4%
+}
+
+#ftFb {
+  color: blue;
+  font-size: 2.4rem
+}
+#ftIg {
+  color: fuchsia;
+  font-size: 2.4rem;
+  margin-top: 1%
+}
+#ftWA {
+  color: darkgreen;
+  font-size: 2rem
+}
+#ftEm{
+  color: brown;
+  font-size: 2rem;
+  margin-top: 1%
+}
+
+.fa-moon, .fa-sun {
+  font-size: 1.7rem;
+  color: darkkhaki
+}
+.thTxt {
+  color: lightsteelblue; 
+  font-weight: 700;
+  font-size: 1.1rem
+}
+.lpa a:hover, footer a:hover {
+  text-decoration: underline
+}
+
+p {
+  font-family: 'signika' , sans-serif;
+}
+
