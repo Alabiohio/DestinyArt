@@ -5,7 +5,7 @@ html {
 body {
   background: #000;
   color: #fff;
-  transition: 0.5s ease
+  transition: 0.8s ease-out
 }
 
 header {
@@ -16,6 +16,9 @@ header {
   width: 100vw;
   background: #222;
   z-index: 1
+}
+.light .fa-spinner {
+  color: maroon
 }
 
 .hdi b {
@@ -41,19 +44,27 @@ header {
 .light .hdi b {
   color: maroon
 }
-.menu li a.act {
+.menu li a.act, .lgScrMenu li a.act {
   font-weight: 800;
   color: darkkhaki;
   text-decoration-color: underline
 }
-.light .menu li a.act {
+.light .menu li a.act, .light .lgScrMenu li a.act{
   color: maroon
 }
+
+/* FOR LARGE AND MEDIUM SCREENS */
 /* FOR LARGE AND MEDIUM SCREENS */
 .lgScrMunuCont {
-  border: 1px solid;
-  height: 45px
+  border: 1px solid darkolivegreen;
+  height: 45px;
+  background: rgba(55, 222, 212, 0.02);
 }
+.light .lgScrMunuCont {
+  border: 1px solid darkolivegreen;
+  background: rgba(55, 222, 212, 0.025);
+}
+
 .lgScrMenu {
   display: flex;
   flex-wrap: nowrap;
@@ -73,7 +84,7 @@ header {
 .learnM {
   border-radius: 50px;
   background: rgba(127,225,0,0.2);
-  border: 1px solid darkgreen;
+  border: 1.5px solid darkgreen;
   font-size: 1.1rem;
   font-family: "Goudy Bookletter 1911", serif;
   font-weight: 800;
@@ -81,8 +92,8 @@ header {
 }
 .learnM:hover {
   background: rgba(127,225,0,0.3);
-  transition: transform 0.01s ease;
-  transform: scale(1.03)
+  transition: transform 1s ease-out;
+  transform: scale(1.03);
   }
 .learnM:active {
   border-radius: 50px;
@@ -91,19 +102,21 @@ header {
   }
 .light .learnM {
   border-radius: 50px;
-  background: rgba(127,225,0,0.3);
-  border: 1px solid darkgreen;
+  background: rgba(208, 240, 192, 0.5);
+  border: 1.2px solid darkgreen;
   color: #000
 }
 .light .learnM:hover {
   background: rgba(0,225,0,0.3);
+  transition: 1s ease-out;
   }
 
 
 
 span.mNIc {
   font-size: 2.4rem;
-  color: white
+  color: palegoldenrod;
+  font-weight: 800
 }
 #menuIc:hover {
   transition: transform 0.5s ease;
@@ -114,15 +127,17 @@ span.mNIc {
   transform: rotate(-180deg)
 }
 
+/* FOR SMALL SCREENS
+/*FOR SMALL SCREENS */
 .Hmenu {
   width: 100vw;
   height: 40vh;
-  /*position: fixed;
-  left: 0;*/
-  background: #666;
+  background: rgba(55, 222, 212, 0.2);
   animation: frmTop 0.3s ease;
   transform-origin: top;
-  display: none
+  display: none;
+  position: relative;
+  transition: 2s ease-out
 }
 .show-menu {
   display: block
@@ -144,10 +159,57 @@ span.mNIc {
   to { transform: scaleY(0)}
 }
 
+/* Create a fade effect */
+.Hmenu::before,
+.Hmenu::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Ensures no interaction issues */
+}
+
+/* Fade at the beginning */
+.Hmenu::before {
+    left: 0;
+    background: linear-gradient(to left, rgba(55, 222, 212, 0.2) 0%, transparent 40%);
+}
+.light .Hmenu::before {
+  background: linear-gradient(to top, white 0%, transparent 50%);
+}
+
+/* Fade at the end */
+.Hmenu::after {
+    right: 0;
+    background: linear-gradient(to right, rgba(55, 222, 212, 0.2) 0%, transparent 40%);
+}
+.light .Hmenu::after {
+  background: linear-gradient(to left, white 0%, transparent 50%);
+}
 
 .menu li {
-  background: #666;
+  background: transparent;
+  position: relative
 }
+.menu li:hover {
+  border: darkolivegreen 1.5px solid;
+  background: transparent;
+  transition: transform 1s ease;
+  transform: scale(1.01);
+  border-radius: 20px
+}
+.menu li:active {
+  border: darkolivegreen 1.5px solid;
+  background-color: rgba(127,225,0,0.4);
+  transition: transform 1s ease;
+  transform: scale(1.01);
+  border-radius: 20px
+}
+.light .menu li:active {
+   background-color: rgba(127,225,0,0.4);
+}
+
 .menu li a {
   color: white;
   font-size: 1.5rem;
@@ -161,20 +223,39 @@ span.mNIc {
   font-size: 1.4rem
 }
 main {
-  margin-top: 25%
+  margin-top: 15%
 }
 
 
 
 
-
-.Hmenu .fa {
+.Hmenu .fa, .lgScrMenu .fa {
   color: darkkhaki
 }
 
 
 
 /* MAIN */
+
+#hmScrCont {
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+    position: relative;
+}
+
+.scroll-wrapper {
+    display: flex;
+    gap: 10px;
+}
+
+.scroll-img {
+    height: 300px;  
+    width: 350px;  
+    object-fit: cover; 
+    display: inline-block;
+    border-radius: 10px;
+}
 
 .hds {
   font-size: 1.8rem;
@@ -186,6 +267,10 @@ main {
   font-style: normal;
 }
 
+#hmScrCont img {
+  border-radius: 40px 40px 0px 40px
+}
+
 .animeImg {
   animation: fromLeft 1s ease
 }
@@ -195,9 +280,7 @@ main {
   to { transform: translateX(0)}
 }
 
-.draImgs {
-  
-}
+
 
 /* SERVICES */
 /* SERVICES */
@@ -212,7 +295,7 @@ main {
 .service-img {
     width: 100%;
     height: auto;
-    border-radius: 10px;
+    border-radius: 40px 6px 40px 6px; 
     margin-bottom: 10px;
 }
 
@@ -232,13 +315,74 @@ main {
 /* ABOUT */
 .abtCont {
   border-radius: 10px;
-  background: rgba(150, 225, 100, 0.3)
+  background: rgba(55, 222, 203, 0.2);
+  position: relative;
 }
+/* Create a fade effect */
+.abtCont::before,
+.abtCont::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Ensures no interaction issues */
+}
+
+/* Fade at the beginning */
+.abtCont::before {
+    left: 0;
+    background: linear-gradient(to top, black 0%, transparent 10%);
+}
+.light .abtCont::before {
+  background: linear-gradient(to top, white 0%, transparent 10%);
+}
+
+/* Fade at the end */
+.abtCont::after {
+    right: 0;
+    background: linear-gradient(to bottom, black 0%, transparent 10%);
+}
+.light .abtCont::after {
+  background: linear-gradient(to bottom, white 0%, transparent 10%);
+} 
+
 
 .values-section {
     padding: 50px 20px;
     background: rgba(55, 222, 203, 0.2);
+    position: relative;
 }
+
+/* Create a fade effect */
+.values-section::before,
+.values-section::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Ensures no interaction issues */
+}
+
+/* Fade at the beginning */
+.values-section::before {
+    left: 0;
+    background: linear-gradient(to top, black 0%, transparent 8%);
+}
+.light .values-section::before {
+  background: linear-gradient(to top, white 0%, transparent 8%);
+}
+
+/* Fade at the end */
+.values-section::after {
+    right: 0;
+    background: linear-gradient(to bottom, black 0%, transparent 8%);
+}
+.light .values-section::after {
+  background: linear-gradient(to bottom, white 0%, transparent 8%);
+} 
+
 .values-section h2 {
     font-size: 2.8rem;
     margin-bottom: 20px;
@@ -250,16 +394,23 @@ main {
 }
 .values-section .icon {
     font-size: 40px;
-    color: maroon; /* Customize the color */
+    color: cornflowerblue; /* Customize the color */
     margin-bottom: 10px;
 }
+.light .values-section .icon {
+  color: maroon;
+}
 .values-section h4 {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     margin-bottom: 10px;
     font-family: "Arapey", serif;
     font-weight: 800;
-    color: olive;
+    color: tan;
 }
+.light .values-section h4 {
+  color: brown
+}
+
 .values-section p {
     font-size: 1.03rem;
     color: azure;
@@ -274,9 +425,67 @@ main {
   font-weight: 800;
   font-size: 2.8rem;
 }
+.lstImg img {
+  border-radius: 15px 10px 0px 15px
+}
 
 
 /* Gallery */
+.spCont {
+    height: 100vh
+}
+
+.top-btn {
+  right: 5%;
+  bottom: 0%;
+  border-radius: 50px 50px 20px 20px;
+  background: rgba(127,225,0,0.3);
+  border: 1px solid darkgreen;
+  padding: 5px;
+  color: aliceblue;
+  position: fixed;
+}
+.light .top-btn {
+  color: maroon
+}
+.top-btn span {
+  font-size: 2rem
+}
+.gaFilButs {
+  white-space: nowrap; /* Prevents wrapping */
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  border-radius: 0px;
+  background: rgba(127,225,0,0.1);
+ /* border: 1px solid darkgreen;*/
+  overflow-x: auto;
+}
+.galFil {
+  margin-bottom: 0;
+  height: 100%; /* Ensures buttons take full height */
+  width: 100%; /* Ensures buttons fill their grid cell */
+  background: transparent;
+  font-family: "Fraunces", serif;
+  font-weight: 500;
+  font-style: normal; font-size: 1rem;
+}
+.galFil:active, .top-btn:active {
+  color: olive;
+  background-color: transparent;
+}
+.galFil:hover, .top-btn:hover {
+  color: olivedrab;
+  background-color: transparent;
+}
+
+.galFil.actShw {
+  background-color: transparent;
+  color: cyan;
+  border-bottom: 2px solid cyan;
+  font-weight: 800;
+  font-size: 1.05rem
+}
 
 .gaScrCont {
   position: relative;
@@ -286,13 +495,11 @@ main {
   overflow-x: auto;
   scroll-behavior: smooth;
 }
-@keyframes scroll {
-  from {transform: translateX(0px)}
-  to {transform: translateX(-1500px)}
+.allCat {
+  gap: 3%
 }
-.gaImgScr {
-  animation: scroll 25s linear alternate infinite 1.5s;
-}
+
+
 .gaDraImgs {
   border-radius: 8px;
   }
@@ -332,8 +539,38 @@ main {
   transition: transform 0.1s ease;
   transform: scale(0.9)
 }
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-color: white;
+  border-style: dotted;
+  border-width: 6.5px;
+  border-left-color: white;
+  border-radius: 50%;
+  animation: spin 2.8s alternate infinite;
+  margin: 20px auto;
+}
+.light .spinner {
+  border-color: maroon;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+   100% { transform: rotate(360deg); }
+}
+
+.category-section img {
+  height: 350px;
+  width: 300px;
+  object-fit: cover;
+  display: inline-block;
+  border-radius: 30px 0px 30px 30px;
+}
 
 
+
+/* FOOTER */
 
 footer {
   box-shadow: 0px 0px 1px #fff;
@@ -373,13 +610,19 @@ footer {
 }
 
 #ftFb {
-  color: blue;
+  color: darkkhaki;
   font-size: 2.4rem
 }
 #ftIg {
-  color: fuchsia;
+  color: darkkhaki;
   font-size: 2.4rem;
   margin-top: 1%
+}
+.light #ftFb {
+  color: black
+}
+.light #ftIg {
+  color: black
 }
 #ftWA {
   color: darkgreen;
@@ -408,3 +651,8 @@ p {
   font-family: 'signika' , sans-serif;
 }
 
+.exLnk a {
+  font-size: 1rem;
+  font-weight: 300;
+  color: lightsteelblue
+}
