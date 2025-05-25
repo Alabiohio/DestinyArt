@@ -1,7 +1,7 @@
 function initializeGallery() {
         let allImages = {}; 
     document.getElementById("galFil1").classList.add("actShw");
-    fetch("https://alabiohio.github.io/DestinyArt/Files/fetches/gallery.json")
+    fetch("https://destinyart.vercel.app/Files/fetches/gallery.json")
         .then(response => response.json())
         .then(data => {
             allImages = data; // Store the full dataset
@@ -33,7 +33,15 @@ function displayGallery(category) {
         const spinnerCont = document.createElement("div");
         spinnerCont.classList.add("grid-x", "text-center", "align-center-middle", "spCont");
         const spinner = document.createElement("div");
-        spinner.classList.add("spinner");
+        spinner.innerHTML = `
+           <l-ring 
+                    size="60"
+                    stroke="5"
+                    bg-opacity="0"
+                    speed="1.5"
+                    color="palegoldenrod">
+           </l-ring> 
+        `;
         spinnerCont.appendChild(spinner);
         galleryContainer.appendChild(spinnerCont);
 

@@ -97,7 +97,13 @@ async function fetchDesArtHome() {
         // Show loading spinner
         dynaCont.innerHTML = `
         <div class="grid-x text-center align-center-middle" style="height: 100vh">
-            <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+            <l-ring 
+                    size="65"
+                    stroke="5"
+                    bg-opacity="0"
+                    speed="1.5"
+                    color="palegoldenrod">
+           </l-ring>
         </div>
         `;
 
