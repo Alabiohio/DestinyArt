@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Arapey:ital@0;1&family=Cormorant:ital,wght@0,300..700;1,300..700&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Goudy+Bookletter+1911&family=Ma+Shan+Zheng&family=Signika:wght@300;400;500;600;700&family=Pacifico&display=swap');
 html {
-  font-size: 16px
+  font-size: 16px;
 }
 body {
   background: #000;
   color: #fff;
-  transition: 0.8s ease-out
+  transition: 0.8s ease-out;
 }
 
 header {
@@ -15,18 +15,10 @@ header {
   box-shadow: 0px 0px 5px #fff;
   width: 100vw;
   background: #222;
-  z-index: 1
+  z-index: 1;
 }
 .light .fa-spinner {
-  color: maroon
-}
-
-.hdi b {
-  font-size: 2rem;
-  color: lightsteelblue;
-  font-family: "Goudy Bookletter 1911", serif;
-  font-weight: 800;
-  font-style: normal;
+  color: maroon;
 }
 .hdi {
   color: turquoise;
@@ -37,6 +29,14 @@ header {
   font-variation-settings:
     "SOFT" 0,
     "WONK" 0;
+  font-size: 2rem;
+}
+.hdi b {
+  font-size: 2rem;
+  color: lightsteelblue;
+  font-family: "Goudy Bookletter 1911", serif;
+  font-weight: 800;
+  font-style: normal;
 }
 .light .hdi {
   color: darkolivegreen
@@ -131,7 +131,7 @@ span.mNIc {
 /*FOR SMALL SCREENS */
 .Hmenu {
   width: 100vw;
-  height: 40vh;
+  height: 200px;
   background: rgba(55, 222, 212, 0.2);
   animation: frmTop 0.3s ease;
   transform-origin: top;
@@ -190,7 +190,7 @@ span.mNIc {
 
 .menu li {
   background: transparent;
-  position: relative
+  position: relative;
 }
 .menu li:hover {
   border: darkolivegreen 1.5px solid;
@@ -539,7 +539,7 @@ main {
   transition: transform 0.1s ease;
   transform: scale(0.9)
 }
-.spinner {
+/*.spinner {
   width: 40px;
   height: 40px;
   border: 4px solid rgba(0, 0, 0, 0.1);
@@ -559,7 +559,7 @@ main {
     0% { transform: rotate(0deg); }
    100% { transform: rotate(360deg); }
 }
-
+*/
 .category-section img {
   height: 350px;
   width: 300px;
