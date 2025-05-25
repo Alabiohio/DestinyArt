@@ -54,7 +54,7 @@ function displayGallery(category) {
                 const sectionContainer = document.createElement("div");
                 sectionContainer.classList.add("category-section");
 
-                const sectionTitle = document.createElement("h1");
+                const sectionTitle = document.createElement("span");
                 sectionTitle.classList.add("gaH");
                 sectionTitle.textContent = key;
                 sectionContainer.appendChild(sectionTitle);
@@ -93,7 +93,7 @@ function createImageElement(img) {
     imgContainer.classList.add("cell", "small-10", "medium-4", "large-4", "gaImgii", "allCat"); // Adjusts size per screen
 
     const imgElement = document.createElement("img");
-    imgElement.src = `https://alabiohio.github.io/DestinyArt/Files/img/${img}`;
+    imgElement.src = `Files/img/${img}`;
     imgElement.alt = "drawing";
     imgElement.classList.add("responsive-img", "lazyload", "gaDraImgs", "fullScreen");
 

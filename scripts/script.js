@@ -34,7 +34,7 @@ fetch("https://alabiohio.github.io/DestinyArt/Files/fetches/gallery.json")
       for (let i = 0; i < 2; i++) {
         allImages.forEach(img => {
           const imgElement = document.createElement("img");
-          imgElement.src = `https://alabiohio.github.io/DestinyArt/Files/img/${img}`;
+          imgElement.src = `Files/img/${img}`;
           imgElement.alt = "drawing";
           imgElement.classList.add("scroll-img");
           homScrImg.appendChild(imgElement);
