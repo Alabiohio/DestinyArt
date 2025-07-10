@@ -38,22 +38,30 @@ function displayGallery(category) {
                     size="60"
                     stroke="5"
                     bg-opacity="0"
-                    speed="1.5"
-                    color="palegoldenrod">
+                    speed="1.5">
            </l-ring> 
         `;
         spinnerCont.appendChild(spinner);
         galleryContainer.appendChild(spinnerCont);
 
+        updateLoaderColor();
+        
     setTimeout(() => {
         galleryContainer.innerHTML = ""; // Remove spinner after loading
 
+            /*
+            const date = document.createElement("span");
+            date.classList.add("date");
+            date.textContent = "2 days ago";
+            galleryContainer.appendChild(date);
+            */
+            
         if (category === "All") {
             // Show all images grouped into sections
             for (const key in allImages) {
                 const sectionContainer = document.createElement("div");
                 sectionContainer.classList.add("category-section");
-
+                    
                 const sectionTitle = document.createElement("span");
                 sectionTitle.classList.add("gaH");
                 sectionTitle.textContent = key;

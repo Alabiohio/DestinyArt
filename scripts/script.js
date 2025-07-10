@@ -6,7 +6,7 @@ const yCDABox = document.getElementById('yCDA');
 const hmLnk = document.getElementById('liHm');
 const hmLnks = document.querySelectorAll(".hmA");
 const gaLnks = document.querySelectorAll(".gaA");
-
+const title = document.querySelector("title");
 
 
 if (hmLnks && gaLnks) {
@@ -92,6 +92,17 @@ function delay(milliseconds) {
 // FETCHING GALLERY CONTENT
 // FETCHING GALLERY CONTENT
 
+/*window.onpopstate = function(event) {
+  if (event.state && event.state.page === 'gallery') {
+    // If the user navigates back to the gallery page, do nothing
+    // But if they navigate back further, you might want to handle that case
+  } else {
+    // If the user navigates back to the index page, update the content accordingly
+    // You might want to reload the index content or handle it differently
+    window.location.href = 'index.html'; // or some other logic to load index content
+  }
+}; */
+
 async function fetchDesArtHome() {
     try {
         // Show loading spinner
@@ -101,12 +112,13 @@ async function fetchDesArtHome() {
                     size="65"
                     stroke="5"
                     bg-opacity="0"
-                    speed="1.5"
-                    color="palegoldenrod">
+                    speed="1.5">
            </l-ring>
         </div>
         `;
 
+        updateLoaderColor();
+        
         await delay(2000);
 
         // Fetch page content
@@ -118,6 +130,9 @@ async function fetchDesArtHome() {
         
         // Update content
         dynaCont.innerHTML = pageDisp;
+        
+        // When loading gallery.html dynamically
+        //history.replaceState({ page: 'gallery' }, 'Gallery', 'gallery.html');
 
         // Call script loading function
         loadGalleryScript();
@@ -135,20 +150,13 @@ async function fetchDesArtHome() {
         window.scrollTo({ top: 0, behavior: "smooth" });
 
         // Store the new state in history
-        history.pushState({ page: "DesArtHome", content: pageDisp }, "Destiny Art Home", "?page=desart");
+        //history.pushState({ page: "DesArtHome", content: pageDisp }, "Destiny Art Home", "?page=desart");
 
     } catch (error) {
         console.error("Something went wrong", error);
     }
 }
 
-// Handle popstate to restore content when navigating back/forward
-window.addEventListener("popstate", function(event) {
-    if (event.state && event.state.content) {
-        dynaCont.innerHTML = event.state.content;
-        loadGalleryScript(); // Reload any necessary scripts
-    }
-});
 
 
 function loadGalleryScript() {
