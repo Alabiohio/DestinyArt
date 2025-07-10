@@ -2,24 +2,23 @@
 html {
   font-size: 16px;
 }
+:root {
+  --background-color: #000;
+}
 body {
-  background: #000;
+  background-color: var(--background-color);
   color: #fff;
   transition: 0.8s ease-out;
 }
 
 header {
-  background-color: transparent;
   position: fixed;
   top: 0;
-  box-shadow: 0px 0px 5px #fff;
   width: 100vw;
-  background: #222;
+  background-color: var(--background-color);
   z-index: 1;
 }
-.light .fa-spinner {
-  color: maroon;
-}
+
 .hdi {
   color: turquoise;
   font-family: "Fraunces", serif;
@@ -30,6 +29,9 @@ header {
     "SOFT" 0,
     "WONK" 0;
   font-size: 2rem;
+}
+#l-ring {
+  color: palegoldenrod !important;
 }
 .hdi b {
   font-size: 2rem;
@@ -289,7 +291,13 @@ main {
 }
 
 .service-item {
-    padding: 15px;
+  padding: 15px;
+  background: rgba(100, 200, 0, 0.13);
+  border-radius: 40px;
+  margin-bottom: 30px;
+}
+.light .service-item {
+  background: rgba(100, 200, 0, 0.2);
 }
 
 .service-img {
@@ -315,8 +323,8 @@ main {
 /* ABOUT */
 .abtCont {
   border-radius: 10px;
-  background: rgba(55, 222, 203, 0.2);
   position: relative;
+  background: rgba(100, 200, 0, 0.1);
 }
 /* Create a fade effect */
 .abtCont::before,
@@ -340,8 +348,8 @@ main {
 
 /* Fade at the end */
 .abtCont::after {
-    right: 0;
-    background: linear-gradient(to bottom, black 0%, transparent 10%);
+  right: 0;
+  background: linear-gradient(to bottom, black 0%, transparent 10%);
 }
 .light .abtCont::after {
   background: linear-gradient(to bottom, white 0%, transparent 10%);
@@ -349,9 +357,12 @@ main {
 
 
 .values-section {
-    padding: 50px 20px;
-    background: rgba(55, 222, 203, 0.2);
-    position: relative;
+  padding: 50px 20px;
+  position: relative;
+  background: rgba(100, 200, 0, 0.11);
+}
+.light .values-section {
+  background: rgba(100, 200, 0, 0.2);
 }
 
 /* Create a fade effect */
@@ -384,18 +395,24 @@ main {
 } 
 
 .values-section h2 {
-    font-size: 2.8rem;
-    margin-bottom: 20px;
-    color: lightsteelblue;
+  font-size: 2.8rem;
+  margin-bottom: 20px;
+  color: lightsteelblue;
 }
 .values-section .cell {
-    padding: 20px;
-    text-align: center;
+  padding: 20px;
+  text-align: center;
+  background-color: var(--background-color);
+  margin-top: 30px;
+  border-radius: 30px;
+}
+.light .values-section .cell {
+  background-color: #fff;
 }
 .values-section .icon {
-    font-size: 40px;
-    color: cornflowerblue; /* Customize the color */
-    margin-bottom: 10px;
+  font-size: 40px;
+  color: cornflowerblue; /* Customize the color */
+  margin-bottom: 10px;
 }
 .light .values-section .icon {
   color: maroon;
@@ -433,6 +450,10 @@ main {
 /* Gallery */
 .spCont {
     height: 100vh
+}
+.date {
+  position: absolute;
+  top: 101px;
 }
 
 .top-btn {
@@ -574,7 +595,7 @@ main {
 
 footer {
   box-shadow: 0px 0px 1px #fff;
-  background: rgba(0,55,30,0.5);
+  background: rgba(0, 45, 20, 0.5);
 }
 
 .contact-section a {

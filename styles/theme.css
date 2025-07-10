@@ -24,11 +24,15 @@ body.light, .light header {
   color: darkslategrey
 }
 
-
-
 .light span.mNIc {
   color: maroon
 }
+
+.light l-ring {
+    color: maroon;
+  }
+}
+
 
 /* SERVICES */
 .light .section-title {
