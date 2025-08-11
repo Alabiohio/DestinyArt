@@ -24,7 +24,7 @@ const homScrImg = document.querySelector('.scroll-wrapper');
 const scrollSpeed = 1; 
 let scrollPosition = 0;
 
-fetch("https://alabiohio.github.io/DestinyArt/Files/fetches/gallery.json")
+fetch("https://destinyart.vercel.app/Files/fetches/gallery.json")
   .then(response => response.json())
   .then(data => {
     const allImages = Object.values(data).flat();
@@ -35,7 +35,7 @@ fetch("https://alabiohio.github.io/DestinyArt/Files/fetches/gallery.json")
         allImages.forEach(img => {
           const imgElement = document.createElement("img");
           imgElement.src = `Files/img/${img}`;
-          imgElement.alt = "drawing";
+          imgElement.alt = "Destiny Art drawing";
           imgElement.classList.add("scroll-img");
           homScrImg.appendChild(imgElement);
         });
@@ -181,7 +181,7 @@ const viewGallery = document.querySelectorAll('.gaView');
 if (viewGallery) {
     viewGallery.forEach(viewGallery => {
         viewGallery.addEventListener('click', () => {
-            dynaContUrl = "https://alabiohio.github.io/DestinyArt/gallery.html"
+            dynaContUrl = "https://destinyart.vercel.app/gallery.html"
             fetchDesArtHome(); 
             servicesPart.style.display="none";
             yCDABox.style.display="none";
